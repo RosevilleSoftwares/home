@@ -104,3 +104,17 @@ The download button calls the GitHub API endpoint:
 It discovers the `.exe` asset attached to the release GitHub marks as **Latest**, regardless of the EXE filename, and links directly to that asset's `browser_download_url`. If several `.exe` files are attached, it prefers one whose filename contains `setup` or `installer`, otherwise it uses the first `.exe`. It does not send visitors to the release page.
 
 For this to work for public visitors, the Galileo repository and release must be public. If GitHub returns 404, verify repository visibility and that the API endpoint works when signed out. Also make sure the latest published release has an `.exe` attached under its Assets section; an Actions artifact alone is not enough.
+
+
+## Download from GitHub's Latest release (no API)
+
+The download button points to:
+
+`https://github.com/RosevilleSoftwares/Galileo/releases/latest/download/Galileo-Setup.exe`
+
+This uses GitHub's built-in `releases/latest/download/<asset-name>` route. It follows the release marked **Latest** and directly downloads the asset; it does not call the Releases API or open the release page.
+
+Requirements:
+- The Galileo repository and release must be public for anonymous visitors to download it.
+- Keep the installer asset filename exactly `Galileo-Setup.exe` in each release. GitHub's latest-download route needs the asset name, but not the version number.
+- If the repository remains private, public website visitors cannot download its release asset anonymously. Make it public or host the installer on another public download service.
