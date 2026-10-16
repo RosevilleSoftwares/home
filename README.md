@@ -16,11 +16,11 @@ Your current repository is:
 
 That repository will normally publish as a **project site** at:
 
-`https://rosevillesoftwares.github.io/RosevilleSoftwares/`
+`https://Rosevillesoftwares.github.io/RosevilleSoftwares/`
 
 To publish at the exact root address you requested:
 
-`https://rosevillesoftwares.github.io/`
+`https://Rosevillesoftwares.github.io/`
 
 rename the repository to:
 
@@ -28,18 +28,18 @@ rename the repository to:
 
 You can rename it under the repository's **Settings → General → Repository name**. GitHub Pages settings may need to be enabled or checked again after renaming.
 
-## Publish at https://rosevillesoftwares.github.io/
+## Publish at https://Rosevillesoftwares.github.io/
 
 1. Download and extract this ZIP.
 2. Open your repository: `https://github.com/RosevilleSoftwares/RosevilleSoftwares`
-3. If you want the exact root URL `https://rosevillesoftwares.github.io/`, rename the repository to `RosevilleSoftwares.github.io` in **Settings → General**. If you keep the name `RosevilleSoftwares`, the site will instead be under `/RosevilleSoftwares/`.
+3. If you want the exact root URL `https://Rosevillesoftwares.github.io/`, rename the repository to `RosevilleSoftwares.github.io` in **Settings → General**. If you keep the name `RosevilleSoftwares`, the site will instead be under `/RosevilleSoftwares/`.
 4. Upload the **contents** of the extracted folder into the repository root. Do not upload the enclosing folder. `index.html`, `assets/`, `downloads/`, `releases/`, and `help/` must be at the root.
 5. Commit the files to the `main` branch.
 6. Open **Settings → Pages**.
 7. Under **Build and deployment**, choose **Deploy from a branch**.
 8. Select branch `main` and folder `/(root)`, then click **Save**.
 9. Open the repository's **Actions** tab and wait for the Pages deployment to complete.
-10. Visit `https://rosevillesoftwares.github.io/`.
+10. Visit `https://Rosevillesoftwares.github.io/`.
 
 No Node.js build step or backend is needed.
 
@@ -136,3 +136,8 @@ For public visitors, `RosevilleSoftwares/home` must be public and the latest pub
 The website uses this fixed direct download URL (no GitHub API lookup):
 
 `https://github.com/RosevilleSoftwares/home/releases/download/galileo/Galileo-Setup.exe.exe`
+
+
+## Favicon / logo
+
+The supplied R logo is included as `favicon.png` and `favicon.ico` and is referenced by every HTML page. Visible company-name text uses `Roseville Softwares` with an uppercase R.
