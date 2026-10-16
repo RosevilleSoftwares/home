@@ -129,3 +129,10 @@ The Downloads page now queries:
 It discovers the `.exe` asset attached to the release GitHub marks **Latest**, regardless of the installer filename, then links directly to the asset's `browser_download_url`. The download button does not open the release page.
 
 For public visitors, `RosevilleSoftwares/home` must be public and the latest published release must have an `.exe` attached under Assets. If GitHub returns 404, check repository visibility and confirm the API URL opens while signed out.
+
+
+## Current Galileo download link
+
+The website uses this fixed direct download URL (no GitHub API lookup):
+
+`https://github.com/RosevilleSoftwares/home/releases/download/galileo/Galileo-Setup.exe.exe`
