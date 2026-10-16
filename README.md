@@ -60,3 +60,23 @@ If your Galileo repository name or owner differs, update the `api` constant in `
 - Replace the placeholder founder biography with the details you want public.
 - Review Galileo feature descriptions so they match the actual shipped software.
 - GitHub Pages websites are publicly accessible. Do not put secrets, tokens, or private information in this repository.
+
+
+## Stable Galileo download
+
+The Downloads page points directly to this installer URL:
+
+`https://github.com/RosevilleSoftwares/Galileo/releases/download/stable/Galileo-Setup-1.6.36.exe`
+
+The `stable` tag is treated as the stable download channel. When you publish a newer stable binary, keep the tag `stable` and ensure the release asset uses the same filename, or update the URL in both `assets/downloads.js` and `downloads/index.html`. The button does not open a release page.
+
+
+## Stable tag download (installer filename is not hardcoded)
+
+The Downloads page queries the release for the fixed `stable` tag:
+
+`https://api.github.com/repos/RosevilleSoftwares/Galileo/releases/tags/stable`
+
+It then finds the `.exe` asset attached to that tagged release and points the button directly to the asset's `browser_download_url`. The visitor is not sent to the release page, and the installer filename/version is not hardcoded.
+
+For each new stable build, update or move the `stable` tag to the release containing the new installer and ensure that release has an `.exe` asset attached. The website will resolve the current asset name automatically on page load. The Galileo repository/release must be public.
