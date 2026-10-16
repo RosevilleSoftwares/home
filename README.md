@@ -118,3 +118,14 @@ Requirements:
 - The Galileo repository and release must be public for anonymous visitors to download it.
 - Keep the installer asset filename exactly `Galileo-Setup.exe` in each release. GitHub's latest-download route needs the asset name, but not the version number.
 - If the repository remains private, public website visitors cannot download its release asset anonymously. Make it public or host the installer on another public download service.
+
+
+## Latest release download — RosevilleSoftwares/home
+
+The Downloads page now queries:
+
+`https://api.github.com/repos/RosevilleSoftwares/home/releases/latest`
+
+It discovers the `.exe` asset attached to the release GitHub marks **Latest**, regardless of the installer filename, then links directly to the asset's `browser_download_url`. The download button does not open the release page.
+
+For public visitors, `RosevilleSoftwares/home` must be public and the latest published release must have an `.exe` attached under Assets. If GitHub returns 404, check repository visibility and confirm the API URL opens while signed out.
