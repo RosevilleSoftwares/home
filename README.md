@@ -93,3 +93,14 @@ For version-independent downloads, **attach the installer to the `stable` releas
 **Repository visibility:** The GitHub screenshot appears to show a lock icon beside `Galileo`, which usually indicates a private repository. GitHub's unauthenticated API returns 404 for private resources, and visitors cannot download private release assets without signing in and having access. For public website visitors to download the installer, make the Galileo repository/public release publicly accessible (or host the binary somewhere public).
 
 The previous version-specific asset (`Galileo-Setup-1.6.36.exe`) will not match this fixed URL. Rename the attached asset to `Galileo-Setup.exe` in the stable release, or upload the new build under that name when you publish the next stable release.
+
+
+## Latest published release: direct EXE download
+
+The download button calls the GitHub API endpoint:
+
+`https://api.github.com/repos/RosevilleSoftwares/Galileo/releases/latest`
+
+It discovers the `.exe` asset attached to the release GitHub marks as **Latest**, regardless of the EXE filename, and links directly to that asset's `browser_download_url`. If several `.exe` files are attached, it prefers one whose filename contains `setup` or `installer`, otherwise it uses the first `.exe`. It does not send visitors to the release page.
+
+For this to work for public visitors, the Galileo repository and release must be public. If GitHub returns 404, verify repository visibility and that the API endpoint works when signed out. Also make sure the latest published release has an `.exe` attached under its Assets section; an Actions artifact alone is not enough.
