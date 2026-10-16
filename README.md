@@ -49,7 +49,7 @@ The download script queries:
 
 `https://api.github.com/repos/RosevilleSoftwares/Galileo/releases/latest`
 
-It finds the first `.exe` asset attached to the latest published release and makes the website button download that file directly. The Galileo repository must be public.
+It finds the first `.exe` asset attached to the latest published release and points the button directly to that binary's download URL. It never falls back to opening the release page. If no `.exe` asset is found or the lookup fails, the button stays disabled and displays a status message. The Galileo repository must be public.
 
 A GitHub Actions build artifact is not automatically a published Release asset. Your Galileo workflow must upload the installer `.exe` to a GitHub Release, or you must attach it manually. When you publish a newer release with an `.exe` asset, the site will detect it on the next page load.
 
