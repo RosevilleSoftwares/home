@@ -141,3 +141,15 @@ The website uses this fixed direct download URL (no GitHub API lookup):
 ## Favicon / logo
 
 The supplied R logo is included as `favicon.png` and `favicon.ico` and is referenced by every HTML page. Visible company-name text uses `Roseville Softwares` with an uppercase R.
+
+
+## Website analytics
+
+The `analytics/` page displays public GitHub Release EXE download counts from `RosevilleSoftwares/home`. Website visitor totals and approximate visitor geography require a Google Analytics 4 property.
+
+1. Create a GA4 web data stream for `https://rosevillesoftwares.github.io`.
+2. Replace `G-XXXXXXXXXX` in `assets/analytics.js` with the stream's Measurement ID.
+3. Commit and push. The script records page activity and a custom `galileo_download_click` event when the Galileo installer button is clicked.
+4. Use GA4 reports for visitors, geography, and download-click events. A click is not proof the installer download completed. GitHub's release asset download count tracks actual asset downloads in aggregate, but does not provide downloader geolocation.
+
+Do not add service-account keys, OAuth client secrets, or private API tokens to this static site. The analytics page is public; Google Analytics reports themselves remain behind your Google account login.

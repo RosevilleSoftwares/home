@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png">
+  <link rel="alternate icon" href="../favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Roseville Softwares website traffic and Galileo download analytics setup.">
+  <title>Analytics — Roseville Softwares</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Roseville Softwares home">Roseville<br>Softwares</a>
+    <nav class="topnav" aria-label="Main navigation">
+      <a href="../">Home</a><a href="../downloads/">Downloads</a><a href="../releases/">Release Notes</a><a href="../help/">Help</a><a class="active" href="./">Analytics</a>
+    </nav>
+  </header>
+  <main class="analytics-main">
+    <p class="eyebrow">SITE INSIGHTS</p>
+    <h1>Website analytics</h1>
+    <p class="lead">Monitor website traffic, understand visitor geography, and track Galileo installer downloads. This page shows public GitHub release download totals; private visitor reports are available through your Google Analytics account after setup.</p>
+
+    <section class="analytics-stats" aria-label="Download metrics">
+      <article class="panel analytics-stat"><p class="stat-label">Total EXE downloads</p><p class="stat-value" id="total-downloads">—</p><p class="stat-foot">Sum of published EXE assets across the latest 100 GitHub releases</p></article>
+      <article class="panel analytics-stat"><p class="stat-label">Latest installer downloads</p><p class="stat-value" id="latest-downloads">—</p><p class="stat-foot" id="latest-release-label">Reading release data from GitHub…</p></article>
+      <article class="panel analytics-stat"><p class="stat-label">Website visitor reports</p><p class="stat-value" id="analytics-status">Setup required</p><p class="stat-foot">Connect a Google Analytics 4 property to collect visits and approximate geography.</p></article>
+    </section>
+    <p id="github-status" class="analytics-status" role="status">Loading public release download counts…</p>
+
+    <section class="analytics-grid">
+      <article class="panel analytics-card">
+        <p class="eyebrow">WEBSITE TRAFFIC</p><h2>Visitors and geolocation</h2>
+        <p>Google Analytics 4 can report users, sessions, page views, countries, regions, and cities at an aggregate level. Once the Measurement ID is configured, open Analytics to view reports and the Realtime report.</p>
+        <a class="button button-primary" href="https://analytics.google.com/" target="_blank" rel="noopener">Open Google Analytics ↗</a>
+      </article>
+      <article class="panel analytics-card">
+        <p class="eyebrow">DOWNLOAD TRACKING</p><h2>Galileo installer activity</h2>
+        <p>GA4 will record a <code>galileo_download_click</code> event when a visitor clicks the installer button. Its location can be analysed in GA4 event reports. This measures the click/attempt, not proof that the transfer completed.</p>
+        <a class="text-link" href="https://github.com/RosevilleSoftwares/home/releases" target="_blank" rel="noopener">View GitHub releases and download counts ↗</a>
+      </article>
+    </section>
+
+    <section class="panel analytics-setup">
+      <p class="eyebrow">ONE-TIME SETUP</p><h2>Connect Google Analytics 4</h2>
+      <ol>
+        <li>Open <a href="https://analytics.google.com/" target="_blank" rel="noopener">Google Analytics</a> and create an account/property for <strong>Roseville Softwares</strong>.</li>
+        <li>Add a <strong>Web</strong> data stream for <code>https://rosevillesoftwares.github.io</code> and copy its Measurement ID (it starts with <code>G-</code>).</li>
+        <li>In <code>assets/analytics.js</code>, replace <code>G-XXXXXXXXXX</code> with your real Measurement ID, then commit and push the website files.</li>
+        <li>After visitors begin using the site, check <strong>Reports → Realtime</strong>, then <strong>Reports → User attributes → Demographic details</strong> for approximate location. For downloads, use the Events report and select <code>galileo_download_click</code>.</li>
+      </ol>
+      <p class="privacy-note">Location is approximate and aggregated; VPNs, proxies, browser settings, consent choices, and reporting thresholds can affect what is available. Do not use analytics to identify or track individual people.</p>
+    </section>
+    <footer class="footer"><span>© <span data-year></span> Roseville Softwares</span><div><a href="../">Home</a><a href="../downloads/">Downloads</a><a href="../help/">Help</a></div></footer>
+  </main>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/analytics.js"></script>
+  <script src="../assets/analytics-dashboard.js"></script>
+</body>
+</html>

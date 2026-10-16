@@ -72,3 +72,29 @@
 /* Prevent horizontal overflow on laptop and desktop widths while retaining mobile behavior. */
 .downloads-layout, .download-main, .feature-grid, .feature-card { min-width: 0; }
 .feature-card { overflow-wrap: anywhere; }
+
+
+/* Analytics page */
+.analytics-main{max-width:1760px;margin:0 auto;padding:clamp(38px,4vw,72px) clamp(22px,3vw,56px) 30px}
+.analytics-main h1{font-size:clamp(36px,3vw,52px);font-weight:400;letter-spacing:-1.8px;line-height:1.15;margin:0 0 12px}
+.analytics-main>.lead{max-width:1050px}
+.analytics-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:34px 0 12px}
+.analytics-stat{padding:24px;min-width:0}
+.stat-label{font-size:13px;color:var(--muted);margin:0 0 12px}
+.stat-value{font-size:clamp(30px,3vw,44px);font-weight:600;letter-spacing:-1.3px;line-height:1.15;margin:0 0 13px;overflow-wrap:anywhere}
+.stat-foot{font-size:12px;color:#7f8a98;line-height:1.6;margin:0}
+.analytics-status{font-size:12px;color:var(--muted);margin:12px 0 30px}
+.analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.analytics-card{padding:clamp(22px,2vw,32px)}
+.analytics-card h2,.analytics-setup h2{font-size:21px;font-weight:600;letter-spacing:-.4px;margin:0 0 12px}
+.analytics-card p:not(.eyebrow),.analytics-setup li,.analytics-setup>p:not(.eyebrow){font-size:14px;line-height:1.75;color:var(--muted)}
+.analytics-card .button{margin-top:8px}
+.analytics-card .text-link{display:inline-block;margin-top:8px}
+.analytics-setup{padding:clamp(22px,2vw,32px);margin-top:18px}
+.analytics-setup ol{padding-left:22px;margin:14px 0}
+.analytics-setup li{padding-left:5px;margin:8px 0}
+.analytics-setup code,.analytics-card code{font-size:.92em;color:#d2e5ff;background:#202a36;border:1px solid #303d4d;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}
+.analytics-setup strong{color:var(--text)}
+.analytics-setup .privacy-note{border-top:1px solid var(--border);padding-top:15px;margin-top:20px;font-size:12px}
+@media(max-width:850px){.analytics-stats{grid-template-columns:1fr 1fr}.analytics-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.analytics-stats{grid-template-columns:1fr}.analytics-main{padding:32px 20px 20px}.analytics-main h1{font-size:36px}.analytics-stat{padding:20px}}
