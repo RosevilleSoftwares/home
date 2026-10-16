@@ -1,5 +1,5 @@
 (function () {
-  const downloadUrl = "https://github.com/RosevilleSoftwares/home/releases/download/galileo/Galileo-Setup.exe.exe";
+  const downloadUrl = "https://github.com/RosevilleSoftwares/home/releases/download/galileo/Galileo-Setup.exe";
   const button = document.getElementById("download-button");
   const status = document.getElementById("release-status");
   if (!button) return;

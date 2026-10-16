@@ -135,7 +135,7 @@ For public visitors, `RosevilleSoftwares/home` must be public and the latest pub
 
 The website uses this fixed direct download URL (no GitHub API lookup):
 
-`https://github.com/RosevilleSoftwares/home/releases/download/galileo/Galileo-Setup.exe.exe`
+`https://github.com/RosevilleSoftwares/home/releases/download/galileo/Galileo-Setup.exe`
 
 
 ## Favicon / logo
