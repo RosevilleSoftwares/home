@@ -80,3 +80,16 @@ The Downloads page queries the release for the fixed `stable` tag:
 It then finds the `.exe` asset attached to that tagged release and points the button directly to the asset's `browser_download_url`. The visitor is not sent to the release page, and the installer filename/version is not hardcoded.
 
 For each new stable build, update or move the `stable` tag to the release containing the new installer and ensure that release has an `.exe` asset attached. The website will resolve the current asset name automatically on page load. The Galileo repository/release must be public.
+
+
+## Stable direct download (no API lookup)
+
+The download button uses this direct binary URL:
+
+`https://github.com/RosevilleSoftwares/Galileo/releases/download/stable/Galileo-Setup.exe`
+
+For version-independent downloads, **attach the installer to the `stable` release with the exact asset name `Galileo-Setup.exe` every time**. The version can still be included in the release title/tag notes, but keep this release asset filename constant. When updating the stable release, replace the asset with the new build using the same filename. The website then needs no changes and does not call the GitHub Releases API or open a release page.
+
+**Repository visibility:** The GitHub screenshot appears to show a lock icon beside `Galileo`, which usually indicates a private repository. GitHub's unauthenticated API returns 404 for private resources, and visitors cannot download private release assets without signing in and having access. For public website visitors to download the installer, make the Galileo repository/public release publicly accessible (or host the binary somewhere public).
+
+The previous version-specific asset (`Galileo-Setup-1.6.36.exe`) will not match this fixed URL. Rename the attached asset to `Galileo-Setup.exe` in the stable release, or upload the new build under that name when you publish the next stable release.
