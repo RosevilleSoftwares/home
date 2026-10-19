@@ -4,8 +4,8 @@
  * The Measurement ID is public; never put a service-account key or private API token here.
  */
 (function () {
-  const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-  const isConfigured = /^G-[A-Z0-9]+$/.test(GA4_MEASUREMENT_ID) && GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX';
+  const GA4_MEASUREMENT_ID = 'G-ZLYJQ6X88P';
+  const isConfigured = /^G-[A-Z0-9]+$/.test(GA4_MEASUREMENT_ID) && GA4_MEASUREMENT_ID !== 'G-ZLYJQ6X88P';
 
   const analyticsStatus = document.getElementById('analytics-status');
   if (analyticsStatus && isConfigured) analyticsStatus.textContent = 'GA4 configured';
